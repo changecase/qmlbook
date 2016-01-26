@@ -13,7 +13,7 @@ Quick Starter
     The source code for this chapter can be found in the `assets folder <../../assets>`_.
 
 
-This chapter provides an overview of QML, the declarative user interface language used in Qt 5. We will discuss the QML syntax, which is a tree of elements, followed by an overview of the most important basic elements. Later we will briefly look at how to create our own elements, called components and how to transform elements using property manipulations. Towards the end we will look how to arrange elements together in a layout and finally have a look at elements where the user can provide input.
+This chapter provides an overview of QML, the declarative user interface language used in Qt 5. We will discuss the QML syntax, which is a tree of elements, followed by an overview of the most important basic elements. Later we will briefly look at how to create our own elements, called components and how to transform elements using property manipulations. Towards the end we will look at how to arrange elements together in a layout, and finally we will have a look at elements where the user can provide input.
 
 QML Syntax
 ==========
@@ -22,9 +22,9 @@ QML Syntax
 
 .. index:: qmlscene, properties, scripting, binding, syntax
 
-QML is a declarative language used to describe the user interface of your application. It breaks down the user interface into smaller elements, which can be combined to components. QML describes the look and the behavior of these user interface elements. This user interface description can be enriched with JavaScript code to provide simple but also more complex logic. In this perspective it follows the HTML-JavaScript pattern but QML is designed from the ground up to describe user interfaces not text-documents.
+QML is a declarative language used to describe the user interface of your application. It breaks down the user interface into smaller elements, which can be combined into components. QML describes the look and the behavior of these user interface elements. This user interface description can be enriched with JavaScript code to provide simple but also more complex logic. In this perspective it follows the HTML-JavaScript pattern but QML is designed from the ground up to describe user interfaces not text-documents.
 
-In its simplest way QML is a hierarchy of elements. Child elements inherit the coordinate system from the parent. An ``x,y`` coordinate is always relative to the parent.
+In its simplest form, QML is a hierarchy of elements. Child elements inherit the coordinate system from their parent. An ``x,y`` coordinate is always relative to the parent.
 
 .. image:: assets/scene.png
 
@@ -69,13 +69,13 @@ Elements are declared by using their element name but are defined by using their
 
 Let's go through the different features of properties:
 
-(1) ``id`` is a very special property-like value, it is used to reference elements inside a QML file (called "document" in QML). The ``id`` is not a string type but rather an identifier and part of the QML syntax. An ``id`` needs to be unique inside a document and it can't be re-set to a different value, nor may it be queried. (It behaves more like a pointer in the C++ world.)
+(1) ``id`` is a very special property-like value, it is used to reference elements inside a QML file (called "document" in QML). The ``id`` is not a string type but rather an identifier and part of the QML syntax. An ``id`` needs to be unique inside a document and it can't be reset to a different value, nor may it be queried. (It behaves more like a pointer in the C++ world.)
 
 (2) A property can be set to a value, depending on its type. If no value is given for a property, an initial value will be chosen. You need to consult the documentation of the particular element for more information about the initial value of a property.
 
-(3) A property can depend on one or many other properties. This is called *binding*. A bound property is updated, when its dependent properties change. It works like a contract, in this case the ``height`` should always be two times the ``width``.
+(3) A property can depend on one or many other properties. This is called *binding*. A bound property is updated when its dependent properties change. It works like a contract, in this case the ``height`` should always be two times the ``width``.
 
-(4) Adding own properties to an element is done using the ``property`` qualifier followed by the type, the name and the optional initial value (``property <type> <name> : <value>``). If no initial value is given a system initial value is chosen.
+(4) Adding custom properties to an element is done using the ``property`` qualifier followed by the type, the name of the new property, and the optional initial value (``property <type> <name> : <value>``). If no initial value is given a system initial value is chosen.
 
     .. note:: You can also declare one property to be the default property if no property name is given by prepending the property declaration with the ``default`` keyword. This is used for example when you add child elements, the child elements are added automatically to the default property ``children`` of type list if they are visible elements.
 
@@ -111,7 +111,7 @@ QML and JavaScript (also known as EcmaScript) are best friends. In the *JavaScri
 .. note::
 
     The difference between the QML ``:`` (binding) and the JavaScript ``=`` (assignment) is, that the binding is a contract and keeps true over the lifetime of the binding, whereas the JavaScript assignment (``=``) is a one time value assignment.
-    The lifetime of a binding ends, when a new binding is set to the property or even when a JavaScript value is assigned is to the property. For example a key handler setting the text property to an empty string would destroy our increment display::
+    The lifetime of a binding ends when a new binding is set to the property or even when a JavaScript value is assigned is to the property. For example a key handler setting the text property to an empty string would destroy our increment display::
 
         Keys.onEscapePressed: {
             label.text = ''
@@ -137,7 +137,7 @@ Item Element
 
 .. issues:: ch04
 
-``Item`` is the base element for all visual elements as such all other visual elements inherit from ``Item``. It doesn't paint anything by itself but defines all properties which are common across all visual elements:
+``Item`` is the base element for all visual elements; as such all other visual elements inherit from ``Item``. It doesn't paint anything by itself but defines all properties which are common across all visual elements:
 
 .. list-table::
     :widths: 20,80
@@ -158,7 +158,7 @@ Item Element
     *   - State definition
         - ``states`` list property with the supported list of states and the current ``state`` property as also the ``transitions`` list property to animate state changes.
 
-To better understand the different properties we will try to introduce them throughout this chapter in context of the element presented. Please remember these fundamental properties are available on every visual element and work the same across these elements.
+To better understand the different properties we will try to introduce them throughout this chapter in the context of the element presented. Please remember these fundamental properties are available on every visual element and work the same across these elements.
 
 .. note::
 

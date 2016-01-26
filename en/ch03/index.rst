@@ -52,7 +52,7 @@ Adding a kit and registering a Qt version is done in the :menuselection:`Setting
 
 .. note::
 
-	Please first check if your Qt Creator has already the correct Qt version registered and then ensure a Kit for your combination of compiler and Qt and device is specified. You can not build a project without a kit.
+	Please first check if your Qt Creator already has the correct Qt version registered and then ensure a Kit for your combination of compiler and Qt and device is specified. You can not build a project without a kit.
 
 
 
@@ -61,15 +61,15 @@ Managing Projects
 
 .. issues:: ch03
 
-Qt Creator manages your source code in projects. You can create a new project by using :menuselection:`File --> New File or Project`. When you create a project you have many choices of application templates. Qt Creator is capable of creating desktop, mobile applications. Application which use Widgets or Qt Quick or Qt Quick and controls or even bare-bone projects. Also project for HTML5 and python are supported. For a beginner it is difficult to choose, so we pick three project types for you.
+Qt Creator manages your source code in projects. You can create a new project by using :menuselection:`File --> New File or Project`. When you create a project you have many choices of application templates. Qt Creator is capable of creating desktop applications, mobile applications, application which use Widgets or Qt Quick or Qt Quick and controls or even bare-bone projects. Also, projects for HTML5 and python are supported. For a beginner it is difficult to choose, so we pick three project types for you.
 
 * **Applications / Qt Quick 2.0 UI**: This will create a QML/JS only project for you, without any C++ code. Take this if you want to sketch a new user interface or plan to create a modern UI application where the native parts are delivered by plug-ins.
 * **Libraries / Qt Quick 2.0 Extension Plug-in**: Use this wizard to create a stub for a plug-in for your Qt Quick UI. A plug-in is used to extend Qt Quick with native elements.
-* **Other Project / Empty Qt Project**: A bare-bone empty project. Take this if you want to code your application with c++ from scratch. Be aware you need to know what you are doing here.
+* **Other Project / Empty Qt Project**: A bare-bone empty project. Take this if you want to code your application with C++ from scratch. Be aware you need to know what you are doing here.
 
 .. note::
 
-	During the first parts of the book we will mainly use the Qt Quick 2.0 UI project type. Later to describe some c++ aspects we will use the Empty-Qt-Project type or something similar. For extending Qt Quick with our own native plug-ins we will use the *Qt Quick 2.0 Extension Plug-in* wizard type.
+	During the first parts of the book we will mainly use the *Qt Quick 2.0 UI* project type. Later -- to describe some C++ -- aspects we will use the *Empty-Qt-Project* type or something similar. For extending Qt Quick with our own native plug-ins we will use the *Qt Quick 2.0 Extension Plug-in* wizard type.
 
 
 
@@ -78,7 +78,7 @@ Using the Editor
 
 .. issues:: ch03
 
-When you open a project or you just created a new project Qt Creator will switch to the edit mode. You should see on the left your project files and in the center area the code editor. Selecting files on the left will open them in the editor. The editor provides syntax highlighting, code-completion and quick-fixes. Also it supports several commands for code refactoring. When working with the editor you will have the feeling that everything reacts immediately. This is thanks to the developers of Qt Creator which made the tool feel really snappy.
+When you open a project (or create a new project) Qt Creator will switch to the edit mode. You should see on the left your project files and in the center area the code editor. Selecting files on the left will open them in the editor. The editor provides syntax highlighting, code-completion and quick-fixes. Also it supports several commands for code refactoring. When working with the editor you will have the feeling that everything reacts immediately. This is thanks to the developers of Qt Creator which made the tool feel really snappy.
 
 .. image:: assets/creator-editor.png
 	:scale: 50%
@@ -94,12 +94,12 @@ The locator is a central component inside Qt Creator. It allows developers to na
 .. image:: assets/locator.png
 	:scale: 50%
 
-A pop-up is coming from the bottom left and shows a list of options. If you just search a file inside your project just hit the first letter from the file name. The locator also accepts wild-cards, so ``*main.qml`` will also work. Otherwise you can also prefix your search to search for specific content type.
+A pop-up appears in the bottom left and shows a list of options. You can search for a file inside your project by hitting the first letter of the file name. The locator also accepts wild-cards, so ``*main.qml`` will also work. Otherwise you can also prefix your search to search for specific content type.
 
 .. image:: assets/creator-locator.png
 	:scale: 50%
 
-Please try it out. For example to open the help for the QML element Rectangle open the locator and type ``? rectangle``. While you type the locator will update the suggestions until you found the reference you are looking for.
+Please try it out. For example to open the help for the QML element Rectangle open the locator and type ``? rectangle``. While you type the locator will update the suggestions until you find the reference you are looking for.
 
 Debugging
 =========
@@ -119,7 +119,7 @@ Shortcuts
 
 Shortcuts are the difference between a nice to use system and a professional system. As a professional you spend hundred of hours in front of your application. Each shortcut which makes your work-flow faster counts. Luckily the developers of Qt Creator think the same and have added literally hundreds of shortcuts to the application.
 
-To get started we have collection some basic shortcuts (in Windows notation):
+To get started we have collected some basic shortcuts (in Windows notation):
 
 * :kbd:`Ctrl+B` - Build project
 * :kbd:`Ctrl+R` - Run Project
